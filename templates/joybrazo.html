@@ -10,10 +10,7 @@
 <body>
     <div class="background">
         <div class="container2">
-            <div class="cont_video">
-                <img class="video" width="560" height="315" src="{{ url_for('video_feed') }}" width="50%"
-                allowfullscreen></img>
-            </div>
+            
         </div>
         
         <div class="buttons_slider">
@@ -21,35 +18,30 @@
                 <div class="column">
                     <div class="joystick">
                         <label for="Grado1">Grado 1:</label>
-                        <input type="range" class="slider" id="Grado1" min="0" max="100" value="50">
-                        <input type="number" id="angulo1" name="angulo1" min="0" max="100" value="50">
+                        <input type="range" class="slider" id="grado1" min="0" max="360" value="0">
+                        <input type="number" id="angulo1" name="angulo1" min="0" max="360" value="0">                        
                     </div>
                     <div class="joystick">
                         <label for="Grado2">Grado 2:</label>
-                        <input type="range" class="slider" id="Grado2" min="0" max="100" value="50">
-                        <input type="number" id="angulo2" name="angulo2" min="0" max="100" value="50">
+                        <input type="range" class="slider" id="grado2" min="0" max="360" value="0">
+                        <input type="number" id="angulo2" name="angulo2" min="0" max="360" value="0">
                     </div>
                     <div class="joystick">
                         <label for="Grado3">Grado 3:</label>
-                        <input type="range" class="slider" id="Grado3" min="0" max="100" value="50">
-                        <input type="number" id="angulo3" name="angulo3" min="0" max="100" value="50">
+                        <input type="range" class="slider" id="grado3" min="0" max="360" value="0">
+                        <input type="number" id="angulo3" name="angulo3" min="0" max="360" value="0">
                     </div>
                 </div>
                 <div class="column">
                     <div class="joystick">
                         <label for="Grado4">Grado 4:</label>
-                        <input type="range" class="slider" id="Grado4" min="0" max="100" value="50">
-                        <input type="number" id="angulo4" name="angulo4" min="0" max="100" value="50">
+                        <input type="range" class="slider" id="grado4" min="0" max="360" value="0">
+                        <input type="number" id="angulo4" name="angulo4" min="0" max="360" value="0">
                     </div>
                     <div class="joystick">
                         <label for="Grado5">Grado5:</label>
-                        <input type="range" class="slider" id="Grado5" min="0" max="100" value="50">
-                        <input type="number" id="angulo5" name="angulo5" min="0" max="100" value="50">
-                    </div>
-                    <div class="joystick">
-                        <label for="Grado6">Grado6:</label>
-                        <input type="range" class="slider" id="Grado6" min="0" max="100" value="50">
-                        <input type="number" id="angulo6" name="angulo6" min="0" max="100" value="50">
+                        <input type="range" class="slider" id="grado5" min="0" max="360" value="0">
+                        <input type="number" id="angulo5" name="angulo5" min="0" max="360" value="0">
                     </div>
                 </div>
                 <p></p>
@@ -85,11 +77,7 @@
                         <input type="range" class="slider" id="VELOCIDAD5" min="0" max="100" value="50">
                         <input type="number" id="vel5" name="vel5" min="0" max="100" value="50">
                     </div>
-                    <div class="joystick">
-                        <label for="VELOCIDAD6">Velocidad6:</label>
-                        <input type="range" class="slider" id="VELOCIDAD6" min="0" max="100" value="50">
-                        <input type="number" id="vel6" name="vel6" min="0" max="100" value="50">
-                    </div>
+                 
                 </div>
                 <p></p>
 
@@ -97,8 +85,8 @@
             <div class="center">
                 <div class="joystick">
                     <label for="referen">Referencia:</label>
-                    <input type="range" class="slider" id="referen" min="0" max="100" value="50">
-                    <input type="number" id="Referencia" name="Referencia" min="0" max="100" value="50">
+                    <input type="range" class="slider" id="referen" min="0" max="100" value="0">
+                    <input type="number" id="Referencia" name="Referencia" min="0" max="100" value="0">
                 </div>
             </div>
             

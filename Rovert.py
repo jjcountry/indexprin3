@@ -15,7 +15,8 @@ print("Valores de los ángulos que se van a enviar:", datos_mapa)
 
 
 fb_db.write_record('/Mapa/Cordenadas', datos_mapa)
-    
+data=fb_db.read_record('/Mapa/Cordenadas')
+print=(data)
  
 @app.route('/')
 def index():

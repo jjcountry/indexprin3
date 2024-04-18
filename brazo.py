@@ -4,7 +4,7 @@ from class_firebase_database import FirebaseDB
 
 app=Flask(__name__)
 
-path ="basededatosprueva-79653-firebase-adminsdk-uu60k-78a8daca61.json"
+'''path ="basededatosprueva-79653-firebase-adminsdk-uu60k-78a8daca61.json"
 url = "https://basededatosprueva-79653-default-rtdb.firebaseio.com/"
 fb_db = FirebaseDB(path,url)
 # Configuración de la conexión a la base de datos MySQL
@@ -36,7 +36,7 @@ def receive_data():
     fb_db.write_record('/angulosBrazo', datos_valores)
     data=fb_db.read_record('angulosBrazo')
     print("Read Data:", data)
-    return jsonify({'message': 'Datos recibidos correctamente'})
+    return jsonify({'message': 'Datos recibidos correctamente'})'''
 
 @app.route('/')
 def index():
