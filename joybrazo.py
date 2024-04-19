@@ -8,8 +8,6 @@ path ="basededatosprueva-79653-firebase-adminsdk-uu60k-78a8daca61.json"
 url = "https://basededatosprueva-79653-default-rtdb.firebaseio.com/"
 fb_db = FirebaseDB(path,url)
 
-
-data=fb_db.read_record('/angulosBrazo/angulos')
 @app.route('/receive_data', methods=['POST'])
 def receive_data():
     data = request.json
@@ -45,13 +43,14 @@ def receive_data():
 
     }
     print("Valores de los ángulos que se van a enviar:", datos_valores)
-
+    
 
     fb_db.write_record('/angulosBrazo/angulos', datos_valores)
- 
+    data=fb_db.read_record('/angulosBrazo/angulos')
+    print("Valores de los ángulos que se van a enviar:", data)
    
     return jsonify({'message': 'Datos recibidos correctamente'})
-            
+           
 
 @app.route('/')
 def index():

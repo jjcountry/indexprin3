@@ -151,6 +151,8 @@ var JoyStick = (function(container, parameters, callback)
             StickStatus.y = ((100*((movedY - centerY)/maxMoveStick))*-1).toFixed();
             StickStatus.cardinalDirection = getCardinalDirection();
             callback(StickStatus);
+            // Mostrar los valores por consola
+      console.log(StickStatus.x)
         }
     }
 
