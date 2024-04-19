@@ -124,12 +124,14 @@ function sendDataToPython() {
         angulo4: parseFloat(window.angulo4),
         angulo5: parseFloat(window.angulo5),
         angulo6: parseFloat(window.angulo6),
+        angulo7: parseFloat(window.angulo7),
         vel1: parseFloat(window.vel1),
         vel2: parseFloat(window.vel2),
         vel3: parseFloat(window.vel3),
         vel4: parseFloat(window.vel4),
         vel5: parseFloat(window.vel5),
         vel6: parseFloat(window.vel6),
+        vel7: parseFloat(window.vel7),
         ref: parseFloat(window.Referencia)
     };
 
