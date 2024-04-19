@@ -7,7 +7,12 @@ app=Flask(__name__)
 path ="basededatosprueva-79653-firebase-adminsdk-uu60k-78a8daca61.json"
 url = "https://basededatosprueva-79653-default-rtdb.firebaseio.com/"
 fb_db = FirebaseDB(path,url)
+
+
+
 def obtener_datos_actualizados():
+    datos_actualizados = {}  # Inicializar datos_actualizados fuera del bucle
+
     # Bucle infinito para obtener datos actualizados
     while True:
         # Obtener los datos de la base de datos Firebase
@@ -38,14 +43,32 @@ def obtener_datos_actualizados():
             print("Velocidad 3:", velocidad3)
             print("Velocidad 4:", velocidad4)
             print("Velocidad 5:", velocidad5)
+
+            # Actualizar datos_actualizados con los nuevos valores
+            datos_actualizados = {
+                'angulo1': angulo1,
+                'angulo2': angulo2,
+                'angulo3': angulo3,
+                'angulo4': angulo4,
+                'angulo5': angulo5,
+                'velocidad1': velocidad1,
+                'velocidad2': velocidad2,
+                'velocidad3': velocidad3,
+                'velocidad4': velocidad4,
+                'velocidad5': velocidad5
+            }
+
         else:
             print("No se encontraron datos de ángulos.")
 
         # Esperar un tiempo antes de volver a obtener los datos
-        time.sleep(10)  # Espera 10 segundos antes de volver a obtener los datos
+        time.sleep(10)
+
+    # Fuera del bucle while, ya no es necesario devolver datos_actualizados
 
 # Llamar a la función para obtener datos actualizados
 obtener_datos_actualizados()
+
 
 
 
