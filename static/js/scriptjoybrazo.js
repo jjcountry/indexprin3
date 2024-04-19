@@ -55,6 +55,52 @@ function increaseFifthSliderValue() {
         sendDataToPython(); // Llamar a la función para enviar los datos a Python
     }
 }
+    function decreaseFirstSliderValue() {
+        const Slider = document.getElementById('grado1');
+        const currentValue = parseInt(Slider.value);
+        if (!isNaN(currentValue)) {
+            Slider.value = currentValue - 1;
+            updateNumberInput(Slider);
+            sendDataToPython(); // Llamar a la función para enviar los datos a Python
+        }
+    }
+    function decreaseSecondSliderValue() {
+        const Slider = document.getElementById('grado2');
+        const currentValue = parseInt(Slider.value);
+        if (!isNaN(currentValue)) {
+            Slider.value = currentValue - 1;
+            updateNumberInput(Slider);
+            sendDataToPython(); // Llamar a la función para enviar los datos a Python
+        }
+    }
+    function decreaseThirdSliderValue() {
+        const Slider = document.getElementById('grado3');
+        const currentValue = parseInt(Slider.value);
+        if (!isNaN(currentValue)) {
+            Slider.value = currentValue - 1;
+            updateNumberInput(Slider);
+            sendDataToPython(); // Llamar a la función para enviar los datos a Python
+        }
+    }
+    function decreaseFourthSliderValue() {
+        const Slider = document.getElementById('grado4');
+        const currentValue = parseInt(Slider.value);
+        if (!isNaN(currentValue)) {
+            Slider.value = currentValue - 1;
+            updateNumberInput(Slider);
+            sendDataToPython(); // Llamar a la función para enviar los datos a Python
+        }
+    }
+    function decreaseFifthSliderValue() {
+        const Slider = document.getElementById('grado5');
+        const currentValue = parseInt(Slider.value);
+        if (!isNaN(currentValue)) {
+            Slider.value = currentValue - 1;
+            updateNumberInput(Slider);
+            sendDataToPython(); // Llamar a la función para enviar los datos a Python
+        }
+    }
+
 document.addEventListener('keydown', function(event) {
     if (event.key === 'q') {
         increaseFirstSliderValue();
@@ -71,6 +117,22 @@ document.addEventListener('keydown', function(event) {
     }
     if (event.key === 'v') {
         increaseFifthSliderValue();
+    }
+    if (event.key === 'p') {
+        decreaseFirstSliderValue();
+    }
+    if (event.key === 'o') {
+        window.movimiento = 2;
+        decreaseSecondSliderValue();
+    }
+    if (event.key === 'i') {
+        decreaseThirdSliderValue();
+    }
+    if (event.key === 'u') {
+        decreaseFourthSliderValue();
+    }
+    if (event.key === 'b') {
+        decreaseFifthSliderValue();
     }
 });
 
