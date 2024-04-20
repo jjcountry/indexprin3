@@ -12,22 +12,26 @@ function iniciarMapa(){
     // Tu código JavaScript aquí
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-    
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-    apiKey: "AIzaSyCik-hsqM24GSvMJdtk0UysyfMvgeOMUks",
-    authDomain: "basededatosprueva-79653.firebaseapp.com",
-    databaseURL: "https://basededatosprueva-79653-default-rtdb.firebaseio.com",
-    projectId: "basededatosprueva-79653",
-    storageBucket: "basededatosprueva-79653.appspot.com",
-    messagingSenderId: "984780399094",
-    appId: "1:984780399094:web:838c3b4addf4fecc1127d7"
-    };
-    
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+ 
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBkvXuvU1oCcrKKlUBsR_cCmYw8SHeKhxs",
+    authDomain: "rover-resilience.firebaseapp.com",
+    databaseURL: "https://rover-resilience-default-rtdb.firebaseio.com",
+    projectId: "rover-resilience",
+    storageBucket: "rover-resilience.appspot.com",
+    messagingSenderId: "737977492853",
+    appId: "1:737977492853:web:ade421db035a08a6ccdf3c",
+    measurementId: "G-9HR8B1VR9W"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
     import{getDatabase, ref, child, get} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -37,8 +41,8 @@ const db = getDatabase();
 let Temp = document.getElementById("temperatureValue");
 let Pres = document.getElementById("pressureValue");
 let Gas = document.getElementById("signalQuality");
-let Dis = document.getElementById("humidityValue");
-let Cor1 = document.getElementById("inclinacionValue");
+let Hum = document.getElementById("humidityValue");
+let Dis = document.getElementById("inclinacionValue");
 let Cor2 = document.getElementById("positionValue");
 let Cor3 = document.getElementById("joint5");
 
@@ -47,14 +51,13 @@ function RetData(){
     get(child(dbRef, 'sensorica/')).then((snapshot)=>{
 
         if(snapshot.exists()){
-            Temp.textContent = + snapshot.val().esp.temperatura;
-            Pres.textContent = + snapshot.val().esp.precion;
-            Gas.textContent = + snapshot.val().esp.gas;
-            Dis.textContent = + snapshot.val().esp.distancia;
-            Cor1.textContent = + snapshot.val().raspi.corriente1;
+            Temp.textContent = + snapshot.val().esp.ecAumLJGtIXxnOELuVUFRkVWQGk1.temperatura;
+            Pres.textContent = + snapshot.val().esp.ecAumLJGtIXxnOELuVUFRkVWQGk1.precion;
+            Gas.textContent = + snapshot.val().esp.ecAumLJGtIXxnOELuVUFRkVWQGk1.gas;
+            Hum.textContent = + snapshot.val().esp.ecAumLJGtIXxnOELuVUFRkVWQGk1.hum;
+            Dis.textContent = + snapshot.val().esp.ecAumLJGtIXxnOELuVUFRkVWQGk1.distancia;
             Cor2.textContent = + snapshot.val().raspi.corriente2;
             Cor3.textContent = + snapshot.val().raspi.corriente3;
-            console.log(Temp)
         }else{
             console.log("Q paso???")
         }
