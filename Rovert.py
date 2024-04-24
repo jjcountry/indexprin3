@@ -2,6 +2,7 @@
 from flask import Flask, render_template,jsonify,request, Response
 from class_firebase_database import FirebaseDB
 import time
+import threading
 
 app=Flask(__name__)
 
@@ -15,7 +16,7 @@ datos_mapa={
 print("Valores de los ángulos que se van a enviar:", datos_mapa)
 fb_db.write_record('/Mapa/Cordenadas', datos_mapa)
 datos_angulos = fb_db.read_record('/angulosBrazo/angulos')
-# Suponiendo que `fb_db` es una instancia de la clase FirebaseDB y `read_record` devuelve un diccionario
+# Suponiendo que `fb_db` es una instancia de la clase FirebaseDB y `read_record` devuelve un diccionari
 def obtener_datos_actualizados():
     # Bucle infinito para obtener datos actualizados
     while True:
@@ -52,12 +53,10 @@ def obtener_datos_actualizados():
 
         # Esperar un tiempo antes de volver a obtener los datos
         time.sleep(10)  # Espera 10 segundos antes de volver a obtener los datos
-
-# Llamar a la función para obtener datos actualizados
-obtener_datos_actualizados()
-
-
-
+# Aquí creamos un hilo para ejecutar la función obtener_datos_actualizados
+thread = threading.Thread(target=obtener_datos_actualizados)
+thread.daemon = True  # Esto hace que el hilo se detenga cuando el programa principal termine
+thread.start()
 
 @app.route('/')
 def index():

@@ -58,11 +58,15 @@ def obtener_datos_actualizados():
             angulo3 = datos_angulos.get('angulo3', 0)
             angulo4 = datos_angulos.get('angulo4', 0)
             angulo5 = datos_angulos.get('angulo5', 0)
+            angulo6 = datos_angulos.get('angulo6', 0)
+            angulo7 = datos_angulos.get('angulo7', 0)
             velocidad1 = datos_angulos.get('velocidad1', 0)
             velocidad2 = datos_angulos.get('velocidad2', 0)
             velocidad3 = datos_angulos.get('velocidad3', 0)
             velocidad4 = datos_angulos.get('velocidad4', 0)
             velocidad5 = datos_angulos.get('velocidad5', 0)
+            velocidad6 = datos_angulos.get('velocidad6', 0)
+            velocidad7 = datos_angulos.get('velocidad7', 0)
 
             # Imprimir las variables
             print("Angulo 1:", angulo1)
@@ -70,11 +74,15 @@ def obtener_datos_actualizados():
             print("Angulo 3:", angulo3)
             print("Angulo 4:", angulo4)
             print("Angulo 5:", angulo5)
+            print("Angulo 6:", angulo6)
+            print("Angulo 7:", angulo7)
             print("Velocidad 1:", velocidad1)
             print("Velocidad 2:", velocidad2)
             print("Velocidad 3:", velocidad3)
             print("Velocidad 4:", velocidad4)
             print("Velocidad 5:", velocidad5)
+            print("Velocidad 6:", velocidad6)
+            print("Velocidad 7:", velocidad7)
 
             # Actualizar datos_actualizados con los nuevos valores
             datos_actualizados = {
