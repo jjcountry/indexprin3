@@ -2,6 +2,7 @@
 from flask import Flask, render_template,jsonify,request, Response
 from class_firebase_database import FirebaseDB
 import time
+import threaded,threading
 
 app=Flask(__name__)
 
@@ -54,7 +55,9 @@ def obtener_datos_actualizados():
         time.sleep(10)  # Espera 10 segundos antes de volver a obtener los datos
 
 # Llamar a la función para obtener datos actualizados
-obtener_datos_actualizados()
+thread = threading.Thread(target=obtener_datos_actualizados)
+thread.daemon = True  # Esto hace que el hilo se detenga cuando el programa principal termine
+thread.start()
 
 
 
